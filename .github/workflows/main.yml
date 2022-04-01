@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+jobs:
+  pipenv-setup:
+    runs-on: ubuntu-latest
+    name: Test pipenv-setup
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test pipenv-setup
+        id: pipenv-setup
+        uses: ./
+        with:
+          fail_on_error: "false"

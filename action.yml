@@ -1,0 +1,22 @@
+name: "Run pipenv-setup"
+description: "Run pipenv-setup"
+author: "wangsha"
+inputs:
+  args:
+    description: "Pipenv-setup input arguments."
+    required: false
+    default: "check"
+  fail_on_error:
+    description: |
+      Exit code when pipenv-setup errors are found [true, false]. Defaults to 'true'.
+    required: false
+    default: "true"
+outputs:
+  output:
+    description: "pipenv-setup output"
+branding:
+  color: "black"
+  icon: "check-circle"
+runs:
+  using: "docker"
+  image: "Dockerfile"
