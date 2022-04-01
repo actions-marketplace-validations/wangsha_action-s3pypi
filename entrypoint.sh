@@ -4,7 +4,8 @@ export SETUPTOOLS_USE_DISTUTILS=stdlib
 echo "fail on error: ${INPUT_FAIL_ON_ERROR}"
 echo "[action-s3pypi] s3pypi ${INPUT_ARGS}"
 exit_val="0"
-output="$(s3pypi ${INPUT_ARGS} 2>&1)" || exit_val="$?"
+python setup.py sdist bdist_wheel
+output="$(s3pypi dist/* ${INPUT_ARGS} 2>&1)" || exit_val="$?"
 
 echo "::set-output name=output::$output"
 
