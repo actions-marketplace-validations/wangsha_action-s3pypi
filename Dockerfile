@@ -3,7 +3,7 @@ FROM python:3-slim
 ENV PYTHONDONTWRITEBYTECODE 1 \
     PYTHONUNBUFFERED 1
 
-RUN pip install --upgrade --no-cache-dir pipenv-setup
+RUN pip install --upgrade --no-cache-dir s3pypi
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh

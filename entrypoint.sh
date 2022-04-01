@@ -2,9 +2,9 @@
 
 export SETUPTOOLS_USE_DISTUTILS=stdlib
 echo "fail on error: ${INPUT_FAIL_ON_ERROR}"
-echo "[action-pipenv-setup] pipenv-setup ${INPUT_ARGS}"
+echo "[action-s3pypi] s3pypi ${INPUT_ARGS}"
 exit_val="0"
-output="$(pipenv-setup ${INPUT_ARGS} 2>&1)" || exit_val="$?"
+output="$(s3pypi ${INPUT_ARGS} 2>&1)" || exit_val="$?"
 
 echo "::set-output name=output::$output"
 

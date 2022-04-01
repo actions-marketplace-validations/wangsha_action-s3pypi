@@ -1,19 +1,18 @@
-name: "Run pipenv-setup"
-description: "Run pipenv-setup"
+name: "Release to s3"
+description: "Release to s3"
 author: "wangsha"
 inputs:
   args:
-    description: "Pipenv-setup input arguments."
-    required: false
-    default: "check"
+    description: "s3pypi input arguments."
+    required: true
   fail_on_error:
     description: |
-      Exit code when pipenv-setup errors are found [true, false]. Defaults to 'true'.
+      Exit code when s3pypi errors are found [true, false]. Defaults to 'true'.
     required: false
     default: "true"
 outputs:
   output:
-    description: "pipenv-setup output"
+    description: "s3pypi output"
 branding:
   color: "black"
   icon: "check-circle"

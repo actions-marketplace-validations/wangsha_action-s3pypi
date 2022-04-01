@@ -12,13 +12,14 @@ on:
         required: true
         default: 'warning'
 jobs:
-  pipenv-setup:
+  s3pypi:
     runs-on: ubuntu-latest
-    name: Test pipenv-setup
+    name: release to s3
     steps:
       - uses: actions/checkout@v3
-      - name: Test pipenv-setup
-        id: pipenv-setup
+      - name: release to s3
+        id: release-s3
         uses: ./
         with:
           fail_on_error: "false"
+          args: "--bucket pipy.mydomain.com --private --no-wheel"
