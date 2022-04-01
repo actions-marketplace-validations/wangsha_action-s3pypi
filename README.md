@@ -4,8 +4,8 @@ Github Action for https://github.com/gorilla-co/s3pypi
 jobs:
   release-to-s3:
     runs-on: ubuntu-latest
-    name: Release to S3
+    name: Release python package to s3
     steps:
-      - name: Release to S3
+      - name: Release python package to s3
         uses: wangsha/action-s3pypi@main
  ```

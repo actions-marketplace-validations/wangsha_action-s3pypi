@@ -1,5 +1,5 @@
-name: "Release to s3"
-description: "Release to s3"
+name: "Release python package to s3"
+description: "Release python package to s3"
 author: "wangsha"
 inputs:
   args:
