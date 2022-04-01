@@ -8,4 +8,8 @@ jobs:
     steps:
       - name: Release python package to s3
         uses: wangsha/action-s3pypi@main
+        with:
+          fail_on_error: "false"
+          args: "--bucket pypi.mydomain.com --private --no-wheel"
+        
  ```
